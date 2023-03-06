@@ -32,10 +32,10 @@
 $ npm install
 ```
 
-##API Transport Service
+## API Transport Service
 This project is an API that calculates the cost of a trip between a passenger and a driver.
 
-##Running Locally
+## Running Locally
 To run the project locally, follow these steps:
 
 Clone the repository: git clone https://github.com/castro545/API-transport-service.git
@@ -44,10 +44,10 @@ Set environment variables by creating a .env file and adding the necessary keys 
 Start the development server: npm run start:dev
 Navigate to http://localhost:3000 in your web browser.
 
-##Running Tests
+## Running Tests
 Tests for this project have not been implemented yet.
 
-##Docker Compose
+## Docker Compose
 To run the project using Docker Compose, follow these steps:
 
 Clone the repository: git clone https://github.com/castro545/API-transport-service.git
