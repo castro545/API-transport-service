@@ -2,8 +2,9 @@ import { faker } from '@faker-js/faker';
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { CreateDriverDto, UpdateDriverDto } from '../drivers/dtos/drivers.dto';
+import { UpdateDriverDto } from '../drivers/dtos/drivers.dto';
 import { Driver } from './models/drivers.schema';
+
 
 @Injectable()
 export class DriverRepository {
@@ -24,7 +25,7 @@ export class DriverRepository {
         const newDriver = new this.driverModel({
             email: faker.internet.email(),
             password: faker.internet.password(),
-            role: 'driver',
+            aviable: true,
             currentLocation: {
                 type: 'Point',
                 coordinates: [

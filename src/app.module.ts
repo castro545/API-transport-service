@@ -10,6 +10,7 @@ import { DatabaseModule } from './database/database.module';
 import { environments } from './enviroments';
 import { DriversModule } from './drivers/drivers.module';
 
+
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -21,7 +22,7 @@ import { DriversModule } from './drivers/drivers.module';
     DatabaseModule,
     RepositoryModule,
     UsersModule,
-    DriversModule
+    DriversModule,
   ],
   controllers: [AppController],
   providers: [AppService],

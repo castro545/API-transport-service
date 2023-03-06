@@ -1,7 +1,8 @@
+import { faker } from '@faker-js/faker';
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { CreateUserDto, UpdateUserDto } from '../users/dtos/user.dto';
+import { UpdateUserDto } from '../users/dtos/user.dto';
 import { User } from './models/user.schema';
 
 @Injectable()
@@ -9,7 +10,7 @@ export class UserRepository {
   constructor(
     @InjectModel('User')
     private readonly userModel: Model<User>,
-  ) {}
+  ) { }
 
   async findAll() {
     return await this.userModel.find().exec();
@@ -19,15 +20,21 @@ export class UserRepository {
     return await this.userModel.findOne({ _id: idHost });
   }
 
-  async create(createUser: CreateUserDto): Promise<User> {
-    const isEmailRepeat = await this.userModel.findOne({
-      email: createUser.email,
+  async create(): Promise<User> {
+    const emailFaker = faker.internet.email();
+    const newUser = new this.userModel({
+      email: emailFaker,
+      password: faker.internet.password(),
+      name: faker.name.fullName(),
+      creditCards: [],
     });
-    if (isEmailRepeat) throw new BadRequestException('Email is repeat');
-    const newUser = new this.userModel(createUser);
+    console.log('user', newUser)
     return await newUser.save();
   }
 
+  async getUserByEmail(email: string) {
+    return await this.userModel.findOne({ email });
+  }
   async update(id: string, updateUser: UpdateUserDto): Promise<User> {
     return await this.userModel
       .findByIdAndUpdate(id, { $set: updateUser }, { new: true })

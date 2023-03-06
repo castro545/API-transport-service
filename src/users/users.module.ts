@@ -1,9 +1,7 @@
 import { UserSchema, User } from '@/repository/models/user.schema';
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-
 import { UsersController } from './controllers/users.controller';
-
 import { UsersService } from './services/users.service';
 
 @Module({
@@ -18,4 +16,4 @@ import { UsersService } from './services/users.service';
   controllers: [UsersController],
   providers: [UsersService],
 })
-export class UsersModule {}
+export class UsersModule { }

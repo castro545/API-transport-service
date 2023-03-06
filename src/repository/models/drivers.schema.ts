@@ -24,6 +24,9 @@ export class Driver extends Document {
         type: string;
         coordinates: [number, number];
     };
+
+    @Prop()
+    aviable: boolean;
 }
 
 export const DriverSchema = SchemaFactory.createForClass(Driver);

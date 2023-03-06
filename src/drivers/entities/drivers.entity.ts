@@ -3,4 +3,5 @@ export class Driver {
   email: string;
   password: string;
   role: string;
+  available: boolean;
 }

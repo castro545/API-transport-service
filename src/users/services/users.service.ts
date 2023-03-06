@@ -4,7 +4,7 @@ import { UserRepository } from '@/repository/users.repository';
 
 @Injectable()
 export class UsersService {
-  constructor(private readonly userRepository: UserRepository) {}
+  constructor(private readonly userRepository: UserRepository) { }
 
   findAll() {
     return this.userRepository.findAll();
@@ -18,8 +18,12 @@ export class UsersService {
     return user;
   }
 
+  getUserByEmail(email: string) {
+    return this.userRepository.getUserByEmail(email);
+  }
+
   create(user: CreateUserDto) {
-    return this.userRepository.create(user);
+    return this.userRepository.create();
   }
 
   update(id: string, changes: UpdateUserDto) {

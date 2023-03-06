@@ -17,7 +17,7 @@ import { MongoIdPipe } from '@/common/mongo-id.pipe';
 @ApiTags('users')
 @Controller('users')
 export class UsersController {
-  constructor(private usersService: UsersService) {}
+  constructor(private usersService: UsersService) { }
 
   @Get()
   @ApiOperation({ summary: 'Get all users' })
@@ -32,9 +32,9 @@ export class UsersController {
   }
 
   @Post()
-  @ApiOperation({ summary: 'Create user' })
-  create(@Body() payload: CreateUserDto) {
-    return this.usersService.create(payload);
+  @ApiOperation({ summary: 'Create user random' })
+  create(CreateUserDto: CreateUserDto) {
+    return this.usersService.create(CreateUserDto);
   }
 
   @Put(':id')
