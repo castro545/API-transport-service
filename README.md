@@ -32,45 +32,30 @@
 $ npm install
 ```
 
-## Running the app
+##API Transport Service
+This project is an API that calculates the cost of a trip between a passenger and a driver.
 
-```bash
-# development
-$ npm run start
+##Running Locally
+To run the project locally, follow these steps:
 
-# watch mode
-$ npm run start:dev
+Clone the repository: git clone https://github.com/castro545/API-transport-service.git
+Install dependencies: npm install
+Set environment variables by creating a .env file and adding the necessary keys and values. Refer to the .env.example file for reference.
+Start the development server: npm run start:dev
+Navigate to http://localhost:3000 in your web browser.
 
-# production mode
-$ npm run start:prod
+##Running Tests
+Tests for this project have not been implemented yet.
 
-# mono-repositories mode
-$ npm run start repository-name --watch
-```
+##Docker Compose
+To run the project using Docker Compose, follow these steps:
 
-## Test
+Clone the repository: git clone https://github.com/castro545/API-transport-service.git
+Install dependencies: npm install
+Set environment variables by creating a .env file and adding the necessary keys and values. Refer to the .env.example file for reference.
+Start the project: docker-compose up
+Navigate to http://localhost:3000 in your web browser.
+Acknowledgements
+Add any acknowledgements here.
 
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+We apologize for not being able to complete the tests due to time constraints.
